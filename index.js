@@ -34,7 +34,7 @@ module.exports = function init(options) {
             "locale": ""
         },
         "messages": {
-            "transferSpeed": "It will take about ${timeHumanize} to transfer ${size}MB over ${speed}Mbit/s connection."
+            "transferSpeed": "${nick}: It will take about ${timeHumanize} to transfer ${size}MB over ${speed}Mbit/s connection."
         }
     };
 
