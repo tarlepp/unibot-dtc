@@ -1,0 +1,26 @@
+{
+  "name": "unibot-dtc",
+  "version": "1.0.0",
+  "description": "DTC (Data Transfer Calculator) plugin for UniBot IRC bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tarlepp/unibot-dtc.git"
+  },
+  "keywords": [
+    "UniBot",
+    "DTC"
+  ],
+  "author": "Tarmo Leppänen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tarlepp/unibot-dtc/issues"
+  },
+  "dependencies": {
+    "lodash": "~3.1.0",
+    "moment-precise-range": "~0.1.0"
+  }
+}
