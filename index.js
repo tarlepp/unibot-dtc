@@ -39,8 +39,8 @@ module.exports = function init(options) {
     };
 
     // Merge configuration for plugin
-    if (_.isObject(config.plugins) && _.isObject(config.plugins.github)) {
-        pluginConfig = _.merge(pluginConfig, config.plugins.github);
+    if (_.isObject(config.plugins) && _.isObject(config.plugins.dtc)) {
+        pluginConfig = _.merge(pluginConfig, config.plugins.dtc);
     }
 
     // Set moment locale, if it's set
