@@ -34,7 +34,8 @@ module.exports = function init(options) {
             "locale": ""
         },
         "messages": {
-            "transferSpeed": "${nick}: It will take about ${timeHumanize} to transfer ${size}MB over ${speed}Mbit/s connection."
+            "dtc": "${nick}: It will take about ${timeHumanize} to transfer ${size}MB over ${speed}Mbit/s connection.",
+            "dtcHelp": "Usage like !dtc [megabytes to transfer] [your connection speed as megabits/s], eg !dtc 1000 100"
         }
     };
 
@@ -48,8 +49,9 @@ module.exports = function init(options) {
         moment.locale(pluginConfig.moment.locale);
     }
 
+    // Helper function to tell nick how to use command
     function showHelp(from, channel) {
-        channel.say('Usage like !dtc [megabytes to transfer] [your connection speed as megabits/s], eg !dtc 1000 100', from);
+        channel.say(pluginConfig.messages.dtcHelp, from);
     }
 
     // Actual plugin implementation
@@ -60,17 +62,18 @@ module.exports = function init(options) {
                     return showHelp(from, channel);
                 }
 
+                // Calculate exact transfer time
                 var time = matches[1] / (matches[2] / 8);
 
                 var templateVars = {
-                    time: time,
+                    timeExact: time,
                     timeHumanize: moment.preciseDiff(moment(), moment().add(time, 'seconds')),
                     size: matches[1],
                     speed: matches[2],
                     nick: from
                 };
 
-                channel.say(_.template(pluginConfig.messages.transferSpeed)(templateVars));
+                channel.say(_.template(pluginConfig.messages.dtc)(templateVars));
             }
         };
     };
