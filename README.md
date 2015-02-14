@@ -51,6 +51,9 @@ speed
 nick 
 ```
 
+### messages.dtcHelp
+Private message that is said to user when he/she triggers ```!dtc``` command wit invalid parameters.
+
 ## Libraries that plugin uses
 * [lodash](https://lodash.com/) - A JavaScript utility library delivering consistency, modularity, performance
 * [Moment.js](http://momentjs.com/) - Parse, validate, manipulate, and display dates in JavaScript
